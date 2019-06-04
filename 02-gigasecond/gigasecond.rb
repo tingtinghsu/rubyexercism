@@ -1,6 +1,6 @@
 module Gigasecond
+  GIGASEC = 10**9  
   def self.from(time)
-    time += 10**9
-    return time
+    time += GIGASEC
   end
 end
