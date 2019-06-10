@@ -1,7 +1,7 @@
 class FlattenArray
   def self.flatten (array, flattened_array = [])
     array.each do |element|
-      if element.class == Array
+      if element.is_a?(Array)
         self.flatten(element, flattened_array)
       else
         flattened_array << element unless element.nil?
