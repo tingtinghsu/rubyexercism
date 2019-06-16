@@ -1,8 +1,6 @@
 class Complement
+  RNA_COMPLEMENT = {'C' => 'G', 'G' => 'C', 'T' => 'A', 'A' => 'U'}
   def self.of_dna(dna)
-    str = ""
-    rna_complement_hash = {'C' => 'G', 'G' => 'C', 'T' => 'A', 'A' => 'U'}
-    dna.split('').to_a.map {|x| str += rna_complement_hash[x] }
-    str
+    dna.each_char.to_a.map {|x| RNA_COMPLEMENT[x] }.join
   end
 end
