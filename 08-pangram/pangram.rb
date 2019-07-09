@@ -1,6 +1,7 @@
 class Pangram
   def self.pangram?(sentence)
-    (('a'..'z').to_a - sentence.downcase.chars).empty?
+    ALPHABET = ('a'..'z').to_a
+    (ALPHABET - sentence.downcase.uniq).empty?
   end
 end
 

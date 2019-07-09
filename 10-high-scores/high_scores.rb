@@ -1,21 +1,19 @@
 class HighScores
-  def initialize(initialized_scores)
-    @initialized_scores = initialized_scores
-  end
+  attr_accessor :scores
 
-  def scores
-    @initialized_scores
+  def initialize(scores)
+    @scores = scores
   end
 
   def latest
-    @initialized_scores.last
+    @scores.last
   end
 
   def personal_best
-    @initialized_scores.sort.pop
+    @scores.max
   end
 
   def personal_top_three
-    @initialized_scores.sort {|a,b| b <=> a}.take(3)
+    @scores.sort.reverse.take(3)
   end
 end
